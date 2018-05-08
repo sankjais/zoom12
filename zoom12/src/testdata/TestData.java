@@ -29,10 +29,17 @@ public class TestData {
 	
 		try {
 			ExcelUtils exceldata = new ExcelUtils(setdir,"Sheet3");
-			System.out.println("The Row count is " + (exceldata.excel_get_rows() - 1));
-			System.out.println("The column count is " + exceldata.excel_get_columns());
+			int col=exceldata.excel_get_rows() - 1;
+			int row=exceldata.excel_get_columns();
 			
-			System.out.println(exceldata.getCellDataasstring(2, 0));
+			for(int c=1;c< col;c++ )
+			{
+				for(int r=0;r<row;r++)
+				{
+			System.out.print(exceldata.getCellDataasstring(c, r)+"  ");	
+				}
+				System.out.println("\n****************");
+			}
 			
 			
 			
