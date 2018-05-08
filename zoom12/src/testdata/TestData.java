@@ -17,36 +17,32 @@ public class TestData {
 			searchCommunityURL = "http://staging.zoom12.com/#/searchCommunity//Announcements",
 			searchArticleURL = "http://staging.zoom12.com/#/searchArticle/",
 			searchServiceProviderURL = "https://staging.zoom12.com/#/searchServiceProvider/";
-	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		TestData data = new TestData();
-		String setdir= System.getProperty("user.dir").concat("\\src\\testdata\\zoom12user.xlsx");
-		
-		
-	
+		String setdir = System.getProperty("user.dir").concat("\\src\\testdata\\zoom12user.xlsx");
+
 		try {
-			ExcelUtils exceldata = new ExcelUtils(setdir,"Sheet3");
-			int col=exceldata.excel_get_rows() - 1;
-			int row=exceldata.excel_get_columns();
-			
-			for(int c=1;c< col;c++ )
-			{
-				for(int r=0;r<row;r++)
-				{
-			System.out.print(exceldata.getCellDataasstring(c, r)+"  ");	
+			ExcelUtils exceldata = new ExcelUtils(setdir, "Sheet3");
+			int row = exceldata.excel_get_rows() - 1;
+			int col = exceldata.excel_get_columns();
+			System.out.println(row +"   "+ col);
+
+			for (int r = 1; r < row; r++) {
+				for (int c = 0; c < col; c++) {
+					String [][]tdata = new String[row][col];
+					tdata[r][c] = exceldata.getCellDataasstring(r, c);
+					System.out.print( tdata[r][c]+ "  ");
 				}
 				System.out.println("\n****************");
 			}
-			
-			
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 }
