@@ -31,6 +31,11 @@ public class TestData {
 			ExcelUtils exceldata = new ExcelUtils(setdir,"Sheet3");
 			System.out.println("The Row count is " + (exceldata.excel_get_rows() - 1));
 			System.out.println("The column count is " + exceldata.excel_get_columns());
+			
+			System.out.println(exceldata.getCellDataasstring(2, 0));
+			
+			
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
