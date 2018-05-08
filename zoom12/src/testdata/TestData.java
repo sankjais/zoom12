@@ -28,17 +28,20 @@ public class TestData {
 			ExcelUtils exceldata = new ExcelUtils(setdir, "Sheet3");
 			int row = exceldata.excel_get_rows() - 1;
 			int col = exceldata.excel_get_columns();
-			System.out.println(row +"   "+ col);
-
+			System.out.println(row + "   " + col);
+			String[][] tdata = new String[row][col];
 			for (int r = 1; r < row; r++) {
 				for (int c = 0; c < col; c++) {
-					String [][]tdata = new String[row][col];
+
 					tdata[r][c] = exceldata.getCellDataasstring(r, c);
-					System.out.print( tdata[r][c]+ "  ");
+					System.out.print(tdata[r][c] + "  ");
 				}
 				System.out.println("\n****************");
 			}
-
+			
+			for (int c = 0; c < col; c++) {
+			data.company_name=tdata[1][c];
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
