@@ -1,4 +1,4 @@
-package testdata;
+package testsuit;
 
 public class TestInitializer {
 

@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/testdata/zoom12user.xlsx</name>
-			<type>1</type>
-			<location>C:/Users/sanket/git/zoom12/zoom12/src/testdata/zoom12user.xlsx</location>
-		</link>
-	</linkedResources>
 </projectDescription>
