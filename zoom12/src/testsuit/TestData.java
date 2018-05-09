@@ -1,12 +1,13 @@
 package testsuit;
 
 import org.apache.commons.collections4.map.StaticBucketMap;
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 
 public class TestData {
 
 	// TODO Auto-generated constructor stub
 
-	String company_name, contact_person, emailID, password, business_description, industry_caters, primary_expertise,
+	 String company_name, contact_person, emailID, password, business_description, industry_caters, primary_expertise,
 			secondary_expertise, website, year_of_incorporation, status_of_product, last_yr_revenue,
 			last_yr_revenue_currency, current_monthy_rate, current_monthy_rate_currency, register_address, city, state,
 			country, contact_prefix, contact_sufix, founder_tag, employees, pincode,
@@ -21,18 +22,20 @@ public class TestData {
 			searchCommunityURL = "http://staging.zoom12.com/#/searchCommunity//Announcements",
 			searchArticleURL = "http://staging.zoom12.com/#/searchArticle/",
 			searchServiceProviderURL = "https://staging.zoom12.com/#/searchServiceProvider/";
-	public static int row, col;
+	 TestData data = new TestData();
 
-	public TestData creatTestData() {
+	/*public TestData creatTestData()*/
+	 public static void main(String args[]) {
+		
+	}{
 		// TODO Auto-generated method stub
 
-		TestData data = new TestData();
 		String setdir = System.getProperty("user.dir").concat("\\src\\testsuit\\zoom12user.xlsx");
 
 		try {
 			ExcelUtils exceldata = new ExcelUtils(setdir, "Sheet3");
-			row = exceldata.excel_get_rows() - 1;// 3
-			col = exceldata.excel_get_columns();// 24
+			int row = exceldata.excel_get_rows() - 1;// 3
+			int col = exceldata.excel_get_columns();// 24
 			System.out.println(row + "   " + col);
 			String[][] tdata = new String[row][col];
 			for (int r = 1; r < row; r++) {
@@ -75,7 +78,8 @@ public class TestData {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return data;
+		//return data;
+		System.out.println(data.company_name);
 
 	}
 }
