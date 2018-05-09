@@ -66,13 +66,7 @@ public class TestData {
 			data.employees=tdata[r][23];
 			}
 			
-			for (int r = 1; r < row; r++) {
-				for (int c = 0; c < col; c++) {
-
-					System.out.print(tdata[r][c] + "  ");
-				}
-				System.out.println("\n****************");
-			}
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
