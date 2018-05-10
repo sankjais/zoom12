@@ -8,19 +8,19 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class CreateCapabilitiesDrivers {
 
-	static WebDriver chrome() {
+	public static WebDriver chrome() {
 		//System.setProperty("webdriver.chrome.driver", "D:/SANKET DATA/Eclipse/eclipse/extDriver/chrome/chromedriver.exe");
 		WebDriver chrome = new ChromeDriver();
 		return chrome;
 	}
 
-	static WebDriver IE() {
+	public static WebDriver IE() {
 		//System.setProperty("webdriver.ie.driver", "D:/SANKET DATA/Eclipse/eclipse/extDriver/IE/IEDriverServer.exe");
 		WebDriver IE = new InternetExplorerDriver();
 		return IE;
 	}
 
-	static WebDriver fireFox() {
+	public static WebDriver fireFox() {
 		//System.setProperty("webdriver.gecko.driver", "D:/SANKET DATA/Eclipse/eclipse/extDriver/gecko/geckodriver.exe");
 		WebDriver fireFox = new FirefoxDriver();
 		return fireFox;

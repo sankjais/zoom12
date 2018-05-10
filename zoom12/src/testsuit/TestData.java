@@ -6,8 +6,7 @@ import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 public class TestData {
 
 	// TODO Auto-generated constructor stub
-
-	 String company_name, contact_person, emailID, password, business_description, industry_caters, primary_expertise,
+	public String company_name, contact_person, emailID, password, business_description, industry_caters, primary_expertise,
 			secondary_expertise, website, year_of_incorporation, status_of_product, last_yr_revenue,
 			last_yr_revenue_currency, current_monthy_rate, current_monthy_rate_currency, register_address, city, state,
 			country, contact_prefix, contact_sufix, founder_tag, employees, pincode,
@@ -22,19 +21,18 @@ public class TestData {
 			searchCommunityURL = "http://staging.zoom12.com/#/searchCommunity//Announcements",
 			searchArticleURL = "http://staging.zoom12.com/#/searchArticle/",
 			searchServiceProviderURL = "https://staging.zoom12.com/#/searchServiceProvider/";
-	 TestData data = new TestData();
 
-	/*public TestData creatTestData()*/
-	 public static void main(String args[]) {
-		
-	}{
+	public TestData creatTestData() 
+	//public static void main(String args[]) 
+	{
+		TestData data = new TestData();
 		// TODO Auto-generated method stub
 
 		String setdir = System.getProperty("user.dir").concat("\\src\\testsuit\\zoom12user.xlsx");
 
 		try {
 			ExcelUtils exceldata = new ExcelUtils(setdir, "Sheet3");
-			int row = exceldata.excel_get_rows() - 1;// 3
+			int row = exceldata.excel_get_rows() ;// 3
 			int col = exceldata.excel_get_columns();// 24
 			System.out.println(row + "   " + col);
 			String[][] tdata = new String[row][col];
@@ -73,13 +71,14 @@ public class TestData {
 				data.founder_tag = tdata[r][22];
 				data.employees = tdata[r][23];
 			}
-
+			//System.out.println(data.company_name);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//return data;
-		System.out.println(data.company_name);
+		return data;
+	//	System.out.println(data.company_name);
+	//	System.out.println(data.contact_person);
 
 	}
 }
